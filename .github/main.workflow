@@ -15,6 +15,7 @@ action "build and deploy" {
   env = {
     BRANCH = "gh-pages"
     BUILD_SCRIPT = "npm ci && npm run build"
+    CNAME = "dhaya.dev"
     FOLDER = "dist"
   }
 }

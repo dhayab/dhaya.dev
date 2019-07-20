@@ -1,0 +1,123 @@
+@import '_vars';
+
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/brands';
+
+
+::selection {
+	background-color: $color-secondary;
+}
+
+html, body {
+	font-size: 0.625rem;
+
+	position: relative;
+	height: 100vh;
+	min-height: 100vh;
+}
+
+body {
+	margin: 0;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	color: #fff;
+	background: linear-gradient(to bottom right, $color-primary, $color-primary-dark);
+	overflow: hidden;
+}
+
+main {
+	display: flex;
+	padding: 0 2rem;
+	height: 100vh;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+h1,
+h2 {
+	font-weight: 200;
+	text-align: center;
+}
+
+h1 { font-size: 4rem; }
+h2 { font-size: 2rem; }
+
+.avatar {
+	width: 15rem;
+	height: 15rem;
+	border-radius: 50%;
+	background-color: #fff;
+	border: .5rem solid $color-primary-dark;
+	animation: pulse 2s infinite;
+	user-select: none;
+}
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 $color-primary-dark;
+	}
+	70% {
+		box-shadow: 0 0 0 2rem rgba($color-primary-dark, 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba($color-primary-dark, 0);
+	}
+}
+
+ul {
+	display: flex;
+	margin: 4rem 0 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		font-size: 5rem;
+
+		+ li {
+			margin-left: 3rem;
+		}
+
+		a {
+			padding: 0 .3rem;
+			color: #fff;
+			border: .3rem solid transparent;
+			text-decoration: none;
+
+			@extend %fa-icon;
+			@extend .fab;
+
+			$networks: (
+				github: $fa-var-github-square,
+				instagram: $fa-var-instagram,
+				linkedin: $fa-var-linkedin,
+				twitter: $fa-var-twitter-square,
+			);
+			@each $network, $icon in $networks {
+				&.#{$network}::before {
+					content: fa-content($icon);
+				}
+			}
+
+			&:active,
+			&:hover,
+			&:focus {
+				color: $color-secondary;
+			}
+
+			&:active,
+			&:focus {
+				border-color: currentColor;
+				border-radius: .8rem;
+				outline: none;
+			}
+
+			&.instagram:focus {
+				border-radius: 1.8rem;
+			}
+
+			span {
+				display: none;
+			}
+		}
+	}
+}

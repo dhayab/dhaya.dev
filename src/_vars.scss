@@ -1,5 +1,14 @@
+@import '@fortawesome/fontawesome-free/scss/_variables';
+
 $fa-font-path: '../node_modules/@fortawesome/fontawesome-free/webfonts';
 
 $color-primary: #471786;
 $color-primary-dark: darken($color-primary, 15%);
 $color-secondary: #eb8f16;
+
+$networks: (
+	github: $fa-var-github-square,
+	instagram: $fa-var-instagram,
+	linkedin: $fa-var-linkedin,
+	twitter: $fa-var-twitter-square,
+);

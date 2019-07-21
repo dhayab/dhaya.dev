@@ -3,31 +3,34 @@
 @import '@fortawesome/fontawesome-free/scss/fontawesome';
 @import '@fortawesome/fontawesome-free/scss/brands';
 
+* { box-sizing: border-box; }
 
 ::selection {
 	background-color: $color-secondary;
 }
 
-html, body {
+html {
 	font-size: 0.625rem;
 
-	position: relative;
-	height: 100vh;
-	min-height: 100vh;
+	height: 100%;
 }
 
 body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	margin: 0;
+	min-height: 100%;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	color: #fff;
 	background: linear-gradient(to bottom right, $color-primary, $color-primary-dark);
-	overflow: hidden;
+	-webkit-tap-highlight-color: transparent;
 }
 
 main {
 	display: flex;
-	padding: 0 2rem;
-	height: 100vh;
+	padding: 2rem;
+	min-height: 100%;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
@@ -64,9 +67,13 @@ h2 { font-size: 2rem; }
 	}
 }
 
+footer {
+	margin-top: 4rem;
+}
+
 ul {
 	display: flex;
-	margin: 4rem 0 0;
+	margin: 0;
 	padding: 0;
 	list-style: none;
 
@@ -86,12 +93,6 @@ ul {
 			@extend %fa-icon;
 			@extend .fab;
 
-			$networks: (
-				github: $fa-var-github-square,
-				instagram: $fa-var-instagram,
-				linkedin: $fa-var-linkedin,
-				twitter: $fa-var-twitter-square,
-			);
 			@each $network, $icon in $networks {
 				&.#{$network}::before {
 					content: fa-content($icon);
@@ -111,6 +112,7 @@ ul {
 				outline: none;
 			}
 
+			&.instagram:active,
 			&.instagram:focus {
 				border-radius: 1.8rem;
 			}

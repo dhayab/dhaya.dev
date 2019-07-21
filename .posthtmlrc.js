@@ -4,8 +4,10 @@ module.exports = {
 		'posthtml-favicons': {
 			configuration: {
 				path: '/',
+				appName: 'dhaya.dev',
 				background: '#471786',
 				theme_color: '#471786',
+				display: "minimal-ui",
 				icons: {
 					android: false,
 					appleIcon: true,

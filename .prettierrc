@@ -1,0 +1,7 @@
+{
+  "singleQuote": true,
+  "proseWrap": "never",
+  "trailingComma": "es5",
+  "printWidth": 180,
+  "htmlWhitespaceSensitivity": "strict"
+}

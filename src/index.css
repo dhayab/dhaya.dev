@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection {
+  @apply bg-secondary;
+}
+
+html {
+  @apply h-full;
+}
+
+body {
+  @apply flex flex-col justify-center min-h-full text-white bg-gradient-to-br from-primary to-primary-dark;
+  --webkit-tap-highlight-color: transparent;
+}
+
+main {
+  @apply flex flex-col items-center justify-center p-4 min-h-full;
+}
+
+h1 {
+  @apply mt-8 mb-14 text-4xl font-extralight text-center;
+}
+
+.avatar {
+  @apply relative w-36 h-36 rounded-full bg-white border-4 border-primary-dark select-none;
+  @apply after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-primary-dark after:rounded-full after:-z-10 after:animate-ping-slow;
+}
+
+.avatar img {
+  @apply w-full h-full rounded-full overflow-hidden;
+}
+
+ul {
+  @apply flex gap-12 m-0 p-0 list-none;
+}
+
+li a {
+  @apply flex transition-all justify-center items-center w-12 h-12 bg-black bg-opacity-40 rounded-md;
+  @apply hover:bg-opacity-100 hover:ring-primary-dark hover:ring-4 outline-none hover:ring-offset-2 hover:ring-offset-primary;
+  @apply focus:bg-opacity-100 focus:ring-primary-dark focus:ring-4 outline-none focus:ring-offset-2 focus:ring-offset-primary;
+}
+
+li img {
+  @apply w-8 h-8 transition-transform invert;
+}
+
+li a:hover img, li a:focus img {
+  @apply scale-110;
+}
